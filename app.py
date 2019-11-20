@@ -16,5 +16,9 @@ def Plot1():
 def table():
     return render_template('table.html')
 
+@app.route('/plot2')
+def Plot2():
+    return render_template('Plot2.html')
+
 
 if __name__ == '__main__': app.run(debug=True)

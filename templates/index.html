@@ -11,12 +11,28 @@
         <link rel="stylesheet" type="text/css" href="/style.css">
     </head>
     <body>
-
-
-        <h1 id="tittle">World Population by Country (in thousands)</h1>
+    <h1 id="tittle">World Population by Country (in thousands)</h1>
       <nav>
            <ul>
                <li><a href="/table">TABLE</a></li>
+               <li><a href="/plot2">Plot 2</a></li>
+               <div>
+                   <p>
+                       Choose a gender:
+                       <select id="select1">
+                           <option value="both">BOTH</option>
+                           <option value="female">Female</option>
+                           <option value="male">Male</option>
+                       </select>
+                   </p>
+                   <p>
+                       The value of the option selected is:
+                       <span class="output"></span>
+                   </p>
+                   <button onclick="getOption()">
+                       Check option
+                   </button>
+               </div>
             </ul>
         </nav>
         <iframe src="/plot1" height="600" width="900"></iframe>
@@ -1378,5 +1394,16 @@
                 <td>1</td>
             </tr>
             </tbody></table>
+        <script type="text/javascript">
+            function getOption() {
+                selectElement =
+                    document.querySelector('#select1');
+
+                output = selectElement.value;
+
+                document.querySelector('.output').textContent
+                    = output;
+            }
+        </script>
     </body>
 </html>
